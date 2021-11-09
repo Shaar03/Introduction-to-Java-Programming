@@ -1,0 +1,28 @@
+# Introduction-to-Java-Programming
+import java.util.Scanner;
+
+public class NumberOfYears {
+/*
+(Find the number of years) Write a program that prompts the user to enter the
+minutes (e.g., 1 billion), and displays the maximum number of years and remaining
+days for the minutes. For simplicity, assume that a year has 365 days.
+*/
+	public static void main(String[] args) {
+		// assume a year has 365 days to start with
+		
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter number of minutes: ");
+		int minutes = input.nextInt();
+		
+		int years = (int)(minutes / (365 * 24 * 60));
+		
+		double remainingMinutes = minutes % (365 * 24 * 60);
+		
+		double days = (int)(remainingMinutes / (24 * 60));
+		
+		System.out.print(minutes + " minutes is approximately " + years + " years and " + days + " days");
+		
+		
+	}
+
+}
