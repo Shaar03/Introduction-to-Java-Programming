@@ -1,0 +1,38 @@
+# Introduction-to-Java-Programming
+import java.util.Scanner;
+public class SumOfDigits {
+/*
+(Sum the digits in an integer) Write a program that reads an integer between 0
+and 1000 and adds all the digits in the integer. For example, if an integer is 932,
+the sum of all its digits is 14.
+Hint: Use the % operator to extract digits, and use the / operator to remove the
+extracted digit. For instance, 932 % 10 = 2 and 932 / 10 = 93.
+*/
+	public static void main(String[] args) {
+
+		Scanner input = new Scanner(System.in);
+
+		System.out.print("Enter an integer digit between 0 and 1000: ");
+		int digit = input.nextInt();
+
+		int sum = 0;
+
+		if(digit != 0)
+		{
+			int digit1 = digit % 10;
+			digit /= 10;
+			sum += digit1;
+			if( digit > 9)
+			{
+				digit1 = digit % 10;
+				sum += digit1;
+				digit /= 10;
+			}
+			digit %= 10;
+			sum += digit;
+		}
+
+		System.out.println("Sum is " + sum);
+
+	}
+}
